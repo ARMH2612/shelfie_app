@@ -1,14 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
+import LOGO from "../assets/img/logo_light.png";
 
 const Home = () => {
   return (
     <View style={styles.container}>
+      <Image source={LOGO} style={styles.img} />
       <Text style={styles.title}>The Number 1</Text>
       <Text style={styles.slogan}>Reading List App</Text>
-      <View style={styles.card}>
-        <Text>Hello, This is a card.</Text>
-      </View>
     </View>
   );
 };
@@ -29,10 +27,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 30,
   },
-  card: {
-    backgroundColor: "#eee",
-    padding: 20,
-    borderRadius: 5,
-    boxShadow: "4px 4px rgba(0,0,0,0.1)",
+
+  img: {
+    marginVertical: 20,
   },
 });
