@@ -3,11 +3,24 @@ import React from "react";
 import { Slot, Stack } from "expo-router";
 
 const RootLayout = () => {
+  //   return <Stack />;
   return (
-    <View style={{ flex: 1 }}>
-      <Stack />
-      <Text>Footer</Text>
-    </View>
+    <Stack
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#ddd",
+        },
+        headerTintColor: "#333",
+        headerTitleStyle: {
+          fontWeight: "bold",
+          fontSize: 18,
+        },
+      }}
+    >
+      <Stack.Screen name="index" options={{ title: "Home" }} />
+      <Stack.Screen name="about" options={{ title: "About" }} />
+      <Stack.Screen name="contact" options={{ title: "Contact" }} />
+    </Stack>
   );
 };
 
