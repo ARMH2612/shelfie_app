@@ -4,8 +4,12 @@ import ThemedView from "../../components/ThemedView";
 import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
 import { Link } from "expo-router";
+import ThemedButton from "../../components/ThemedButton";
 
 const Register = () => {
+  const handleRegister = () => {
+    console.log("Register form submitted");
+  };
   return (
     <ThemedView style={styles.container}>
       <Spacer />
@@ -13,6 +17,9 @@ const Register = () => {
         Register for an account
       </ThemedText>
 
+      <ThemedButton onPress={handleRegister}>
+        <ThemedText style={{ color: "#f2f2f2" }}>Register</ThemedText>
+      </ThemedButton>
       <Spacer height={100} />
       <Link href="/login">
         <ThemedText
@@ -33,6 +40,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     textAlign: "center",
