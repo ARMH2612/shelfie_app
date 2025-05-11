@@ -6,6 +6,9 @@ import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 
 const Login = () => {
+  const handleSubmit = () => {
+    console.log("Login form submitted");
+  };
   return (
     <ThemedView style={styles.container}>
       <Spacer />
@@ -14,6 +17,7 @@ const Login = () => {
       </ThemedText>
       <Pressable
         style={({ pressed }) => [styles.btn, pressed && styles.pressed]}
+        onPress={handleSubmit}
       >
         <ThemedText style={{ color: "#f2f2f2" }}>Login</ThemedText>
       </Pressable>
