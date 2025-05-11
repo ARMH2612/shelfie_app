@@ -10,6 +10,8 @@ export function UserProvider({ children }) {
   async function login(email, password) {
     try {
       await account.createEmailPasswordSession(email, password);
+      const response = await account.get();
+      setUser(response);
     } catch (error) {
       console.log(error.message);
     }
@@ -17,6 +19,7 @@ export function UserProvider({ children }) {
   async function register(email, password) {
     try {
       await account.create(ID.unique(), email, password);
+      await login(email, password);
     } catch (error) {
       console.log(error.message);
     }

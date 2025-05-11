@@ -12,15 +12,14 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { user } = useUser();
+  const { user, login } = useUser();
 
-  const handleSubmit = () => {
-    console.log("current user", user);
-
-    console.log({
-      email,
-      password,
-    });
+  const handleSubmit = async () => {
+    try {
+      await login(email, password);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
