@@ -6,12 +6,12 @@ import { useUser } from "../../hooks/useUser";
 import ThemedButton from "../../components/ThemedButton";
 
 const Profile = () => {
-  const { logout } = useUser();
+  const { logout, user } = useUser();
 
   return (
     <ThemedView style={styles.container} safe={true}>
       <ThemedText style={styles.heading} title={true}>
-        Your Email
+        {user.email}
       </ThemedText>
       <Spacer />
       <ThemedText>Time to Start Reading Some Books...</ThemedText>
