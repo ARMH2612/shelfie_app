@@ -32,6 +32,8 @@ export function UserProvider({ children }) {
   async function getInitialUserValue() {
     try {
       const response = await account.get();
+      console.log(response);
+
       setUser(response);
     } catch (error) {
       setUser(null);
